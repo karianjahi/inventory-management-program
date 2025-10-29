@@ -1,6 +1,6 @@
 /*
 An inventory manage
-ment program that allows to add, update, find and remove products from the inventory. We use an array of objects to represent the inventory, where each objecthas a name and quantity as the keys.
+ment program that allows to add, update, find and remove products from the inventory. We use an array of objects to represent the inventory, where each object has a name and quantity as the keys.
 */
 
 let inventory = [
@@ -21,13 +21,16 @@ let inventory = [
 ];
 
 const findProductIndex = (productName) => {
+  let name = productName.toLowerCase();
   for (let i = 0; i < inventory.length; i++) {
-    if (inventory[i].name === productName) return i;
+    if (inventory[i].name === name) return i;
   }
+  return -1;
 };
 
-console.log(findProductIndex("flour"));
 
 const addProduct = (productObject) => {};
 
 const removeProduct = (productName, productQuantity) => {};
+
+console.log(findProductIndex("WaNjeNGi"));
