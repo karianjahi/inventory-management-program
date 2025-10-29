@@ -33,8 +33,6 @@ inventory-management-program/
 
 ### 📌 Core Functions
 
-### 📌 Core Functions
-
 | Function | Parameters | Returns / Behavior |
 |---------|------------|--------------------|
 | `findProductIndex()` | `(productName: string)` | Returns the index of the product in the inventory, or `-1` if not found |
