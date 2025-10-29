@@ -46,7 +46,7 @@ inventory-management-program/
 
 1) Clone the repo
 ```bash
-    git clone https://github.com/<your-username>/inventory-management-program.git
+    git clone https://github.com/karianjahi/inventory-management-program.git
     cd inventory-management-program
 ```
 2) Run the code
