@@ -14,9 +14,7 @@ let inventory = [];
 
 const findProductIndex = (productName) => {
   let name = productName.toLowerCase();
-  for (let i = 0; i < inventory.length; i++) {
-    if (inventory[i].name === name) return i;
-  }
+  for (let i = 0; i < inventory.length; i++) if (inventory[i].name === name) return i;
   return -1;
 };
 
