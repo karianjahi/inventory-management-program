@@ -33,12 +33,14 @@ inventory-management-program/
 
 ### 📌 Core Functions
 
-Function              Description
-───────────────────────────────────────────────────────────────────────────────
-findProductIndex()    → Returns index of product in inventory array or -1
-addProduct()          → Adds new product or updates existing quantity
-removeProduct()       → Subtracts quantity or removes product when zero
-inventory[]           → Global array holding objects {name, quantity}
+### 📌 Core Functions
+
+| Function | Parameters | Returns / Behavior |
+|---------|------------|--------------------|
+| `findProductIndex()` | `(productName: string)` | Returns the index of the product in the inventory, or `-1` if not found |
+| `addProduct()` | `({ name: string, quantity: number })` | Adds product if new, otherwise increases quantity. Returns updated product object |
+| `removeProduct()` | `(productName: string, productQuantity: number)` | Subtracts quantity or removes product. Logs status messages |
+| `inventory` | *(array)* | Global array storing all `{name, quantity}` product objects |
 
 ---
 
