@@ -66,6 +66,17 @@ const removeProduct = (productName, productQuantity) => {
   }
 };
 
-let productObject = { name: "FLOUR", quantity: 52 };
-console.log(removeProduct(productObject.name, productObject.quantity));
+// TESTS!
+inventory = [
+  { name: "Tanya", quantity: 15 },
+  { name: "Santa", quantity: 54 },
+  { name: "Heska", quantity: 113 },
+  { name: "Simba", quantity: 19 },
+  { name: "Gilean", quantity: 8 },
+  { name: "flour", quantity: 5 },
+  { name: "Rambo", quantity: 28 },
+  { name: "Sadima", quantity: 9 },
+  { name: "Gitiri", quantity: 30 },
+];
+
 console.log(inventory);
