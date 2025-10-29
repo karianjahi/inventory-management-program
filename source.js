@@ -28,13 +28,24 @@ const findProductIndex = (productName) => {
   return -1;
 };
 
-
 const addProduct = (productObject) => {
-  let productIndex = findProductIndex(productObject.name);
-  console.log(productIndex)
+  const productIndex = findProductIndex(productObject.name);
+  const name = productObject.name.toLowerCase();
+  const quantity = productObject.quantity;
+  if (productIndex === -1) {
+    inventory.push({
+      name: name,
+      quantity: quantity,
+    });
+    console.log(`${name} added to inventory`)
+  } else {
+    inventory[productIndex].quantity += quantity;
+    console.log(`${name} quantity updated`)
+  }
+  return inventory[findProductIndex(name)];
 };
-console.log(addProduct({'name': 'FlOur'}));
+
+let productObject = { name: "flOur", quantity: 15};
+console.log(addProduct(productObject));
 
 const removeProduct = (productName, productQuantity) => {};
-
-console.log(findProductIndex("WaNjeNGi"));
