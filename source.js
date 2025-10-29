@@ -4,20 +4,8 @@ ment program that allows to add, update, find and remove products from the inven
 */
 
 let inventory = [
-  {
-    name: "flour",
-    quantity: 5,
-  },
-
-  {
-    name: "tobacco",
-    quantity: 5,
-  },
-
-  {
-    name: "wanjengi",
-    quantity: 50241,
-  },
+  { name: "flour", quantity: 20 },
+  { name: "rice", quantity: 5 },
 ];
 
 const findProductIndex = (productName) => {
@@ -29,28 +17,51 @@ const findProductIndex = (productName) => {
 };
 
 const addProduct = (productObject) => {
-  const productIndex = findProductIndex(productObject.name);
   const name = productObject.name.toLowerCase();
   const quantity = productObject.quantity;
+  const productIndex = findProductIndex(name);
   if (productIndex === -1) {
     inventory.push({
       name: name,
       quantity: quantity,
     });
-    console.log(`${name} added to inventory`)
+    console.log(`${name} added to inventory`);
   } else {
     inventory[productIndex].quantity += quantity;
-    console.log(`${name} quantity updated`)
+    console.log(`${name} quantity updated`);
   }
   return inventory[findProductIndex(name)];
 };
 
-
+// a function that is meant to subtract a product quantity from the inventory
 const removeProduct = (productName, productQuantity) => {
-  let name = productName.toLowerCase();
-  
-
+  const name = productName.toLowerCase();
+  const productIndex = findProductIndex(name);
+  if (productIndex === -1) {
+    // product doesn't exist!
+    console.log(`${name} not found`);
+  } else {
+    // product exists!
+    const oldQuantity = inventory[productIndex].quantity;
+    const remainingQuantity = oldQuantity - productQuantity;
+    if (remainingQuantity < 0) {
+      console.log(
+        `Not enough ${name} available, remaining pieces: ${inventory[productIndex].quantity}`
+      );
+    } else if (remainingQuantity === 0) {
+      // remove the object from the inventory
+      inventory.splice(productIndex, 1); // as in the index of the item then specify how many to remove
+      console.log(`${name} removed from inventory`);
+    } else {
+      // update the object
+      inventory[productIndex].quantity -= productQuantity;
+      console.log(
+        `Remaining ${name} pieces: ${inventory[productIndex].quantity}`
+      );
+    }
+  };
 };
 
-let productObject = { name: "flOur", quantity: 18};
-console.log(addProduct(productObject));
+let productObject = { name: "FLOUR", quantity: 52 };
+console.log(removeProduct(productObject.name, productObject.quantity));
+console.log(inventory);
