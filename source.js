@@ -1,12 +1,16 @@
 /*
 An inventory manage
 ment program that allows to add, update, find and remove products from the inventory. We use an array of objects to represent the inventory, where each object has a name and quantity as the keys.
+
+User Stories:
+
+1. Declare an empty array named inventory that will store product objects having a key name with the value of a lowercase string, and a key quantity with the value of an integer.
+2. Create a function named `findProductIndex` that takes the product name as its argument and returns the index of the corresponding product object inside the inventory array.
+3. Create a function named `addProduct` that takes a product object as its argument.
+4. Create a function named removeProduct that takes the product name and quantity as its arguments.
 */
 
-let inventory = [
-  { name: "flour", quantity: 20 },
-  { name: "rice", quantity: 5 },
-];
+let inventory = [];
 
 const findProductIndex = (productName) => {
   let name = productName.toLowerCase();
@@ -59,7 +63,7 @@ const removeProduct = (productName, productQuantity) => {
         `Remaining ${name} pieces: ${inventory[productIndex].quantity}`
       );
     }
-  };
+  }
 };
 
 let productObject = { name: "FLOUR", quantity: 52 };
