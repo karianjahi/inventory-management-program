@@ -24,13 +24,13 @@ Products are stored in an **array of objects**, where each object has:
 ## 🧠 Implementation Overview
 
 ### 📁 Project Structure
-
+```bash
 inventory-management-program/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
 └── source.js
-
+``
 ### 📌 Core Functions
 
 | Function | Parameters | Returns / Behavior |
