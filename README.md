@@ -30,7 +30,7 @@ inventory-management-program/
 ├── LICENSE
 ├── README.md
 └── source.js
-``
+```
 ### 📌 Core Functions
 
 | Function | Parameters | Returns / Behavior |
