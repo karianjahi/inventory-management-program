@@ -45,7 +45,12 @@ const addProduct = (productObject) => {
   return inventory[findProductIndex(name)];
 };
 
-let productObject = { name: "flOur", quantity: 15};
-console.log(addProduct(productObject));
 
-const removeProduct = (productName, productQuantity) => {};
+const removeProduct = (productName, productQuantity) => {
+  let name = productName.toLowerCase();
+  
+
+};
+
+let productObject = { name: "flOur", quantity: 18};
+console.log(addProduct(productObject));
