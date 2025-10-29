@@ -69,7 +69,7 @@ Run:  `node source.js`  and observe console output.
 
 ## 📜 License
 
-Licensed under MIT — see `LICENSE`.
+Licensed under MIT — see [License](https://opensource.org/license/mit).
 
 ---
 
