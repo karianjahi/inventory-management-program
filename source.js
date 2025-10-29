@@ -29,7 +29,11 @@ const findProductIndex = (productName) => {
 };
 
 
-
+const addProduct = (productObject) => {
+  let productIndex = findProductIndex(productObject.name);
+  console.log(productIndex)
+};
+console.log(addProduct({'name': 'FlOur'}));
 
 const removeProduct = (productName, productQuantity) => {};
 
