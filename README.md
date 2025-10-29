@@ -1,29 +1,41 @@
 # 📦 Inventory Management Program
 
-A simple **inventory management** program written in **JavaScript** that allows you to **add**, **update**, **find**, and **remove** products from an in-memory inventory.
+This is a beginner-friendly **JavaScript inventory tracking program**.  
+It supports basic operations like **adding**, **finding**, **updating**, and **removing** products — all stored in a simple in-memory array of objects.
 
-Products are stored in an **array of objects**, where each object has:
+---
 
-{
-  name: String (lowercase),
-  quantity: Number (integer)
-}
+## 🧠 JavaScript Fundamentals Practiced
+
+This project purposefully exercises core, foundational JavaScript concepts:
+
+| Concept | How it's used here |
+|--------|---------------------|
+| **Arrays** | Inventory is stored in an array: `let inventory = []` |
+| **Objects** | Each product is stored as `{ name, quantity }` |
+| **Functions** | All logic is encapsulated in reusable functions |
+| **Conditionals** | `if/else` chains drive logical decisions |
+| **Loops** | A `for` loop searches products by name |
+| **String methods** | `.toLowerCase()` normalizes inputs |
+| **Array methods** | `.push()` adds and `.splice()` removes from inventory |
+| **Return values** | Functions like `findProductIndex()` return useful values |
+| **Console I/O** | Uses `console.log()` to inform the user of system state |
+
+This is great practice for writing procedural logic and working with real-world data structures.
 
 ---
 
 ## ✨ Features
 
-- ✅ Add new products to inventory
-- ♻️ Update quantity if product already exists
-- 🔍 Find product index by name
-- 🗑️ Remove product or reduce its quantity
-- 💬 Console logs for user feedback
+- ✅ Add a product — or update it if it exists
+- 🔍 Find a product index by name
+- 🔄 Increase or decrease existing stock
+- 🗑️ Remove items when quantity reaches zero
+- 💬 Console feedback for every action
 
 ---
 
-## 🧠 Implementation Overview
-
-### 📁 Project Structure
+## 📁 Project Structure
 ```bash
 inventory-management-program/
 ├── .gitignore
@@ -31,58 +43,61 @@ inventory-management-program/
 ├── README.md
 └── source.js
 ```
-### 📌 Core Functions
+---
 
-| Function | Parameters | Returns / Behavior |
-|---------|------------|--------------------|
-| `findProductIndex()` | `(productName: string)` | Returns the index of the product in the inventory, or `-1` if not found |
-| `addProduct()` | `({ name: string, quantity: number })` | Adds product if new, otherwise increases quantity. Returns updated product object |
-| `removeProduct()` | `(productName: string, productQuantity: number)` | Subtracts quantity or removes product. Logs status messages |
-| `inventory` | *(array)* | Global array storing all `{name, quantity}` product objects |
+## 📌 Core Functions
+
+| Function | Parameters | Behavior |
+|---------|------------|----------|
+| `findProductIndex()` | `(productName: string)` | Returns index of product in `inventory` or `-1` if not found |
+| `addProduct()` | `({ name: string, quantity: number })` | Adds object if not exists, else increments quantity |
+| `removeProduct()` | `(productName: string, productQuantity: number)` | Subtracts or removes product; prevents overdraft |
+| `inventory` | *(array)* | Holds all product objects as `{ name, quantity }` |
 
 ---
 
-## 🔧 How to Use
+## 🧪 Running & Testing
 
-1) Clone the repo
-```bash
+### Clone and run:
+
     git clone https://github.com/karianjahi/inventory-management-program.git
     cd inventory-management-program
-```
-2) Run the code
-```bash
     node source.js
-```
----
 
-## 🧪 Included Tests
+### Pre-written test cases
+Tests at the bottom of `source.js` verify:
 
-Test cases at bottom of `source.js` validate:
+- Searching inventories 🔍
+- Adding or updating stocks ➕
+- Partial or full removal ➖
+- Edge cases like overdraft errors ⚠️
 
-- Product search 🔍
-- Adding/updating ➕
-- Removing/reducing ➖
+Just run:
 
-Run:  `node source.js`  and observe console output.
+    node source.js
 
----
-
-## 📜 License
-
-Licensed under MIT — see [License](https://opensource.org/license/mit).
+and read the console output.
 
 ---
 
 ## 💡 Future Enhancements
 
-- CLI or Web UI
-- Persist inventory to file or DB
-- Validation and detailed error handling
+- Add CLI prompts instead of hard-coded tests
+- Save inventory to a JSON file or database
+- Create a web UI consuming this core logic
+- Input validation and exception handling
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see  [License](https://opensource.org/license/mit) for details.
 
 ---
 
 ## 🙌 Contributions
 
-Forks and PRs welcome 🚀
+Pull requests and improvements are welcome.  
+Fork, play, improve, and open a PR 🚀
 
 Happy coding! 🎯
