@@ -68,15 +68,32 @@ const removeProduct = (productName, productQuantity) => {
 
 // TESTS!
 inventory = [
-  { name: "Tanya", quantity: 15 },
-  { name: "Santa", quantity: 54 },
-  { name: "Heska", quantity: 113 },
-  { name: "Simba", quantity: 19 },
-  { name: "Gilean", quantity: 8 },
+  { name: "tanya", quantity: 15 },
+  { name: "santa", quantity: 54 },
+  { name: "heska", quantity: 113 },
+  { name: "simba", quantity: 19 },
+  { name: "gilean", quantity: 8 },
   { name: "flour", quantity: 5 },
-  { name: "Rambo", quantity: 28 },
-  { name: "Sadima", quantity: 9 },
-  { name: "Gitiri", quantity: 30 },
+  { name: "rambo", quantity: 28 },
+  { name: "sadima", quantity: 9 },
+  { name: "gitiri", quantity: 30 },
 ];
 
+// Test findProductIndex
+console.log(findProductIndex("Simba")); // should return 3
+console.log(findProductIndex("hasinA")); // should return -1
+
+// Test addProduct
+console.log(addProduct({name: "sadima", quantity: 1})); // should add 1 to quantity to get quantity = 10 => {name: 'sadima', quantity: 10} and log the message: sadima quantity updated
+console.log(addProduct({name: "gitu", quantity: 3})); // Should add this new product to inventory and log: gitu added to inventory
+
+// Test removeProduct:
+productObject = {name: "gilean", quantity: 5};
+console.log(removeProduct(productObject.name, productObject.quantity)); // should subtract 5 from the quantity to log Remaining gilean pieces: 3
+
+productObject = {name: "rambo", quantity: 28};
+console.log(removeProduct(productObject.name, productObject.quantity)); // should remove the object since quantity reduced to zero and log: rambo removed from inventory 
+
+productObject = {name: "heska", quantity: 120};
+console.log(removeProduct(productObject.name, productObject.quantity)); // Object remains unchanged in the inventory since the quantity to remove exceeds the prevailing value and log: Not enough heska available, remaining pieces: 113.
 console.log(inventory);
